@@ -21,6 +21,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // kết nối giữa 2 VC và xử lý closure
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let otherVC = segue.destination as? OtherViewController
+        
+        //xử lý dữ liệu
+        otherVC?.closure = {(name: String) -> Void in
+        
+            self.nameLabel.text = name
+            
+        }
+    }
 }
 
